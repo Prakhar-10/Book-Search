@@ -1,0 +1,595 @@
+[
+    {
+        "BookId":"1",
+        "Genre" : "comedy",
+        "Price" : "110",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"2",
+        "Genre" : "action",
+        "Price" : "120",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"3",
+        "Genre" : "thriller",
+        "Price" : "130",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"4",
+        "Genre" : "romance",
+        "Price" : "210",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"5",
+        "Genre" : "fiction",
+        "Price" : "170",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"6",
+        "Genre" : "sci-fi",
+        "Price" : "160",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"7",
+        "Genre" : "history",
+        "Price" : "190",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"8",
+        "Genre" : "children's",
+        "Price" : "310",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"9",
+        "Genre" : "religion",
+        "Price" : "150",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"10",
+        "Genre" : "politics",
+        "Price" : "220",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"11",
+        "Genre" : "comedy",
+        "Price" : "120",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"12",
+        "Genre" : "action",
+        "Price" : "220",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"13",
+        "Genre" : "thriller",
+        "Price" : "230",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"14",
+        "Genre" : "romance",
+        "Price" : "20",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"15",
+        "Genre" : "fiction",
+        "Price" : "170",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"16",
+        "Genre" : "sci-fi",
+        "Price" : "260",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"17",
+        "Genre" : "history",
+        "Price" : "140",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"18",
+        "Genre" : "children's",
+        "Price" : "320",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"19",
+        "Genre" : "religion",
+        "Price" : "250",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"20",
+        "Genre" : "politics",
+        "Price" : "120",
+        "Examine" : "yes"
+    },{
+        "BookId":"21",
+        "Genre" : "comedy",
+        "Price" : "130",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"22",
+        "Genre" : "action",
+        "Price" : "160",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"23",
+        "Genre" : "thriller",
+        "Price" : "180",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"24",
+        "Genre" : "romance",
+        "Price" : "340",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"25",
+        "Genre" : "fiction",
+        "Price" : "17",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"26",
+        "Genre" : "sci-fi",
+        "Price" : "16",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"27",
+        "Genre" : "history",
+        "Price" : "19",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"28",
+        "Genre" : "children's",
+        "Price" : "30",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"29",
+        "Genre" : "religion",
+        "Price" : "50",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"30",
+        "Genre" : "politics",
+        "Price" : "300",
+        "Examine" : "yes"
+    },{
+        "BookId":"31",
+        "Genre" : "comedy",
+        "Price" : "100",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"32",
+        "Genre" : "action",
+        "Price" : "420",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"33",
+        "Genre" : "thriller",
+        "Price" : "430",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"34",
+        "Genre" : "romance",
+        "Price" : "270",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"35",
+        "Genre" : "fiction",
+        "Price" : "370",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"36",
+        "Genre" : "sci-fi",
+        "Price" : "460",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"37",
+        "Genre" : "history",
+        "Price" : "290",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"38",
+        "Genre" : "children's",
+        "Price" : "31",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"39",
+        "Genre" : "religion",
+        "Price" : "15",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"40",
+        "Genre" : "politics",
+        "Price" : "220",
+        "Examine" : "yes"
+    },{
+        "BookId":"41",
+        "Genre" : "comedy",
+        "Price" : "510",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"42",
+        "Genre" : "action",
+        "Price" : "520",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"43",
+        "Genre" : "thriller",
+        "Price" : "890",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"44",
+        "Genre" : "romance",
+        "Price" : "56",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"45",
+        "Genre" : "fiction",
+        "Price" : "103",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"46",
+        "Genre" : "sci-fi",
+        "Price" : "560",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"47",
+        "Genre" : "history",
+        "Price" : "590",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"48",
+        "Genre" : "children's",
+        "Price" : "610",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"49",
+        "Genre" : "religion",
+        "Price" : "500",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"50",
+        "Genre" : "politics",
+        "Price" : "400",
+        "Examine" : "yes"
+    },{
+        "BookId":"51",
+        "Genre" : "comedy",
+        "Price" : "110",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"52",
+        "Genre" : "action",
+        "Price" : "120",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"53",
+        "Genre" : "thriller",
+        "Price" : "133",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"54",
+        "Genre" : "romance",
+        "Price" : "211",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"55",
+        "Genre" : "fiction",
+        "Price" : "171",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"56",
+        "Genre" : "sci-fi",
+        "Price" : "164",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"57",
+        "Genre" : "history",
+        "Price" : "191",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"58",
+        "Genre" : "children's",
+        "Price" : "312",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"59",
+        "Genre" : "religion",
+        "Price" : "153",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"60",
+        "Genre" : "politics",
+        "Price" : "22",
+        "Examine" : "yes"
+    },{
+        "BookId":"61",
+        "Genre" : "comedy",
+        "Price" : "11",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"62",
+        "Genre" : "action",
+        "Price" : "1200",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"63",
+        "Genre" : "thriller",
+        "Price" : "1306",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"64",
+        "Genre" : "romance",
+        "Price" : "2103",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"65",
+        "Genre" : "fiction",
+        "Price" : "1701",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"66",
+        "Genre" : "sci-fi",
+        "Price" : "1660",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"67",
+        "Genre" : "history",
+        "Price" : "121",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"68",
+        "Genre" : "children's",
+        "Price" : "3101",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"69",
+        "Genre" : "religion",
+        "Price" : "1500",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"70",
+        "Genre" : "politics",
+        "Price" : "221",
+        "Examine" : "yes"
+    },{
+        "BookId":"71",
+        "Genre" : "comedy",
+        "Price" : "1401",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"72",
+        "Genre" : "action",
+        "Price" : "1220",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"73",
+        "Genre" : "thriller",
+        "Price" : "130",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"74",
+        "Genre" : "romance",
+        "Price" : "2210",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"75",
+        "Genre" : "fiction",
+        "Price" : "170",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"76",
+        "Genre" : "sci-fi",
+        "Price" : "1602",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"77",
+        "Genre" : "history",
+        "Price" : "1908",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"78",
+        "Genre" : "children's",
+        "Price" : "103",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"79",
+        "Genre" : "religion",
+        "Price" : "1000",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"80",
+        "Genre" : "politics",
+        "Price" : "920",
+        "Examine" : "yes"
+    },{
+        "BookId":"81",
+        "Genre" : "comedy",
+        "Price" : "112",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"82",
+        "Genre" : "action",
+        "Price" : "124",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"83",
+        "Genre" : "thriller",
+        "Price" : "1302",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"84",
+        "Genre" : "romance",
+        "Price" : "2109",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"85",
+        "Genre" : "fiction",
+        "Price" : "177",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"86",
+        "Genre" : "sci-fi",
+        "Price" : "169",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"87",
+        "Genre" : "history",
+        "Price" : "1090",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"88",
+        "Genre" : "children's",
+        "Price" : "3010",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"89",
+        "Genre" : "religion",
+        "Price" : "154",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"90",
+        "Genre" : "politics",
+        "Price" : "202",
+        "Examine" : "yes"
+    },{
+        "BookId":"91",
+        "Genre" : "comedy",
+        "Price" : "1103",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"92",
+        "Genre" : "action",
+        "Price" : "1204",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"93",
+        "Genre" : "thriller",
+        "Price" : "1305",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"94",
+        "Genre" : "romance",
+        "Price" : "107",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"95",
+        "Genre" : "fiction",
+        "Price" : "1701",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"96",
+        "Genre" : "sci-fi",
+        "Price" : "1606",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"97",
+        "Genre" : "history",
+        "Price" : "1903",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"98",
+        "Genre" : "children's",
+        "Price" : "1099",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"99",
+        "Genre" : "religion",
+        "Price" : "1400",
+        "Examine" : "yes"
+    },
+    {
+        "BookId":"100",
+        "Genre" : "politics",
+        "Price" : "2000",
+        "Examine" : "yes"
+    }
+]
+   
