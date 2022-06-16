@@ -123,6 +123,7 @@ const displayPrice = () =>{
                 priceInp += `<span>${book.Price}</span>`;
                 idInp += `<span>${book.BookId}</span>`;
                 genreInp+= `<span>${book.Genre}</span>`;
+                break;
             }
         }
         placeholder.innerHTML = priceInp;
@@ -184,6 +185,56 @@ const displayId = () =>{
         genreSpan.innerHTML = genreInp;
     })
 }
+
+const ascSort = () =>{
+    let table, rows, sorted, i, x, y, sortFlag;
+    table = document.querySelector("#table-all-books");
+    sorted = true;
+    while (sorted) {
+        sorted = false;
+        rows = table.rows;
+        for (i = 1; i < rows.length - 1; i++) {
+            sortFlag = false;
+            x = rows[i].getElementsByTagName("td")[2];
+            y = rows[i + 1].getElementsByTagName("td")[2];
+            let xval = x.innerHTML;
+            let yval = y.innerHTML;
+            if (parseInt(xval) > parseInt(yval)) {
+               sortFlag = true;
+               break;
+            }
+        }
+        if (sortFlag) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            sorted = true;
+        }
+    }
+} 
+
+const descSort = () =>{
+    let table, rows, sorted, i, x, y, sortFlag;
+    table = document.querySelector("#table-all-books");
+    sorted = true;
+    while (sorted) {
+        sorted = false;
+        rows = table.rows;
+        for (i = 1; i < rows.length - 1; i++) {
+            sortFlag = false;
+            x = rows[i].getElementsByTagName("td")[2];
+            y = rows[i + 1].getElementsByTagName("td")[2];
+            let xval = x.innerHTML;
+            let yval = y.innerHTML;
+            if (parseInt(xval) < parseInt(yval)) {
+               sortFlag = true;
+               break;
+            }
+        }
+        if (sortFlag) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            sorted = true;
+        }
+    }
+} 
 
 getSimilarBooks();
 getBooks();
