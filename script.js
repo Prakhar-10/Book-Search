@@ -1,12 +1,9 @@
-const getBooks = () =>{
-    fetch("books.json")
-    .then(function(response){
+const getBooks = (selector) => {
+    fetch('books.json').then((response) => {
         return response.json();
-    })
-    .then(function(books){
-        console.log(books);
-        let placeholder = document.querySelector("#table-all-books");
-        let out = "";
+    }).then((books) => {
+        let placeholder = document.querySelector(selector);
+        let out = '';
         for(let book of books){
             out += `
                 <tr>
@@ -22,219 +19,78 @@ const getBooks = () =>{
     })
 }
 
-const getSimilarBooks = () =>{
-    fetch("books.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(books){
-        console.log(books);
-        let placeholder = document.querySelector("#table-similar-books");
-        let out = "";
-        for(let book of books){
-            out += `
-                <tr>
-                    <td>${book.BookId}</td>
-                    <td>${book.Genre}</td>
-                    <td>${book.Price}</td>
-                    <td>${book.Examine}</td>
-                </tr>
-            `;
-
-        }
-        placeholder.innerHTML += out;
-    })
-}
-
-const searchGenre = () => {
-    let input = document.getElementById("input-search-genre");
+const search = (searchClass, rowIdx) => {
+    let input = document.querySelector(searchClass);
     let filter = input.value.toUpperCase();
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
+    let table = document.querySelector('.js-table-similar-books');
+    let tr = table.getElementsByTagName('tr');
 
     for(let i=0;i<tr.length;i++){
-        let td = tr[i].getElementsByTagName('td')[1];
+        let td = tr[i].getElementsByTagName('td')[rowIdx];
         if(td){
             let textVal = td.textContent || td.innerHTML;
             if(textVal.toUpperCase().indexOf(filter) > -1){
-                tr[i].style.display = ""; 
+                tr[i].style.display = ''; 
             }else{
-                tr[i].style.display = "none";
-            }
-        }
-    }
-    
-}
-
-const searchID = () => {
-    let input = document.getElementById("input-search-id");
-    let filter = input.value;
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
-
-    for(let i=0;i<tr.length;i++){
-        let td = tr[i].getElementsByTagName('td')[0];
-        if(td){
-            let textVal = td.textContent || td.innerHTML;
-            if(textVal.indexOf(filter) > -1){
-                tr[i].style.display = "";
-            }else{
-                tr[i].style.display = "none";
+                tr[i].style.display = 'none';
             }
         }
     }
 }
 
-const searchPrice = () => {
-    let input = document.getElementById("input-search-price");
-    let filter = input.value.toUpperCase();
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
-
-    for(let i=0;i<tr.length;i++){
-        let td = tr[i].getElementsByTagName('td')[2];
-        if(td){
-            let textVal = td.textContent || td.innerHTML;
-            if(textVal.toUpperCase().indexOf(filter) > -1){
-                tr[i].style.display = "";
-            }else{
-                tr[i].style.display = "none";
-            }
-        }
-    }
-   
-}
-
-const displayPrice = () =>{
-    fetch("books.json")
-    .then(function(response){
+const display = (inputName, inputClass) => {
+    fetch('books.json').then((response) => {
         return response.json();
-    })
-    .then(function(books){
-        let input = document.getElementById("input-search-price");
-        let placeholder = document.querySelector(".c-price");
-        let idSpan = document.querySelector(".c-book");
-        let genreSpan = document.querySelector(".c-genre");
-        let priceInp = "";
-        let idInp = "";
-        let genreInp = "";
+    }).then((books) => {
+        let input = document.querySelector(inputClass);
+        let inputObject = {
+            price: '',
+            id: '',
+            genre: '',
+        };
         for(let book of books){
-            if(book.Price == input.value){
-                priceInp += `<span>${book.Price}</span>`;
-                idInp += `<span>${book.BookId}</span>`;
-                genreInp+= `<span>${book.Genre}</span>`;
+            if(book[inputName] === input.value){
+                inputObject.price += `<span>${book.Price}</span>`;
+                inputObject.id += `<span>${book.BookId}</span>`;
+                inputObject.genre += `<span>${book.Genre}</span>`;
                 break;
             }
         }
-        placeholder.innerHTML = priceInp;
-        idSpan.innerHTML = idInp;
-        genreSpan.innerHTML = genreInp;
+        document.querySelector('.c-price').innerHTML = inputObject.price;
+        document.querySelector('.c-book').innerHTML = inputObject.id;
+        document.querySelector('.c-genre').innerHTML = inputObject.genre;
     })
 }
 
-const displayGenre = () =>{
-    fetch("books.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(books){
-        let input = document.getElementById("input-search-genre");
-        let priceSpan = document.querySelector(".c-price");
-        let idSpan = document.querySelector(".c-book");
-        let genreSpan = document.querySelector(".c-genre");
-        let priceInp = "";
-        let idInp = "";
-        let genreInp = "";
-        for(let book of books){
-            if(book.Genre === input.value){
-                priceInp += `<span>${book.Price}</span>`;
-                idInp += `<span>${book.BookId}</span>`;
-                genreInp+= `<span>${book.Genre}</span>`;
-                break;
-            }
-        }
-        priceSpan.innerHTML = priceInp;
-        idSpan.innerHTML = idInp;
-        genreSpan.innerHTML = genreInp;
-    })
-}
-
-const displayId = () =>{
-    fetch("books.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(books){
-        let input = document.getElementById("input-search-id");
-        let priceSpan = document.querySelector(".c-price");
-        let idSpan = document.querySelector(".c-book");
-        let genreSpan = document.querySelector(".c-genre");
-        let priceInp = "";
-        let idInp = "";
-        let genreInp = "";
-        for(let book of books){
-            if(book.BookId == input.value){
-                priceInp += `<span>${book.Price}</span>`;
-                idInp += `<span>${book.BookId}</span>`;
-                genreInp+= `<span>${book.Genre}</span>`;
-                break;
-            }
-        }
-        priceSpan.innerHTML = priceInp;
-        idSpan.innerHTML = idInp;
-        genreSpan.innerHTML = genreInp;
-    })
-}
-
-const ascSort = () =>{
-    let table, rows, sorted, i, x, y, sortFlag;
-    table = document.querySelector("#table-all-books");
+const sort = (ifAsc) => {
+    let table, rows, sorted, sortFlag, idx;
+    table = document.querySelector('.js-table-all-books');
     sorted = true;
     while (sorted) {
         sorted = false;
         rows = table.rows;
-        for (i = 1; i < rows.length - 1; i++) {
+        for (idx = 1; idx < rows.length - 1; idx++) {
             sortFlag = false;
-            x = rows[i].getElementsByTagName("td")[2];
-            y = rows[i + 1].getElementsByTagName("td")[2];
-            let xval = x.innerHTML;
-            let yval = y.innerHTML;
-            if (parseInt(xval) > parseInt(yval)) {
-               sortFlag = true;
-               break;
+            let firstValue = rows[idx].getElementsByTagName('td')[2];
+            let secondValue = rows[idx + 1].getElementsByTagName('td')[2];
+            if(ifAsc){
+                if (parseInt(firstValue.innerHTML) > parseInt(secondValue.innerHTML)) {
+                    sortFlag = true;
+                    break;
+                 }
+            }else{
+                if(parseInt(firstValue.innerHTML) < parseInt(secondValue.innerHTML)){
+                    sortFlag = true;
+                    break;
+                }
             }
         }
         if (sortFlag) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            rows[idx].parentNode.insertBefore(rows[idx + 1], rows[idx]);
             sorted = true;
         }
     }
 } 
 
-const descSort = () =>{
-    let table, rows, sorted, i, x, y, sortFlag;
-    table = document.querySelector("#table-all-books");
-    sorted = true;
-    while (sorted) {
-        sorted = false;
-        rows = table.rows;
-        for (i = 1; i < rows.length - 1; i++) {
-            sortFlag = false;
-            x = rows[i].getElementsByTagName("td")[2];
-            y = rows[i + 1].getElementsByTagName("td")[2];
-            let xval = x.innerHTML;
-            let yval = y.innerHTML;
-            if (parseInt(xval) < parseInt(yval)) {
-               sortFlag = true;
-               break;
-            }
-        }
-        if (sortFlag) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            sorted = true;
-        }
-    }
-} 
-
-getSimilarBooks();
-getBooks();
+getBooks('.js-table-all-books');
+getBooks('.js-table-similar-books');

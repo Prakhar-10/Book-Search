@@ -12,8 +12,8 @@
         <div id="div-search-price" class="container" style="margin-bottom:20px; padding-top:20px;">
             <h3>Search Book By Id</h3>
             <form action="#">
-                <input type="text" id="input-search-id" class="form-control" onkeyup="searchID()" style="width:25%;display:inline;">
-                <button id="btn-search-id" onclick="displayId()" class="btn" type="submit">Search Product</button>
+                <input type="text" class="form-control js-input-search-id" onkeyup="search('.js-input-search-id', 0)" style="width:25%;display:inline;">
+                <button onclick="display('BookId', '.js-input-search-id')" class="btn" type="submit">Search Product</button>
             </form>
             
         </div>
@@ -21,16 +21,16 @@
         <div id="div-search-genre" class="container" style="margin-bottom:20px; padding-top:20px;">
             <h3>Search Book By Genre</h3>
             <form action="#">
-                <input type="text" id="input-search-genre" onkeyup="searchGenre()" class="form-control" style="width:25%;display:inline;">
-                <button id="btn-search-genre" onclick="displayGenre()" class="btn" type="submit">Search Genre</button>
+                <input type="text" onkeyup="search('.js-input-search-genre', 1)" class="form-control js-input-search-genre" style="width:25%;display:inline;">
+                <button onclick="display('Genre', '.js-input-search-genre')" class="btn" type="submit">Search Genre</button>
             </form>
         </div>
 
         <div id="div-search-price" class="container" style="margin-bottom:20px; padding-top:20px;">
             <h3>Search Book By Price</h3>
             <form action="#">
-                <input type="text" id="input-search-price" onkeyup="searchPrice()" class="form-control" style="width:25%;display:inline;">
-                <button id="btn-search-price" onclick="displayPrice()" class="btn" type="submit">Search Price</button>
+                <input type="text" onkeyup="search('.js-input-search-price', 2)" class="form-control js-input-search-price" style="width:25%;display:inline;">
+                <button id="btn-search-price" onclick="display('Price', '.js-input-search-price')" class="btn" type="submit">Search Price</button>
             </form>
         </div>
 
@@ -45,7 +45,7 @@
 
         <div  class="container" style="margin-bottom:20px">
             <h3>List of Similar Books</h3>
-            <table id="table-similar-books" class="table">
+            <table class="table js-table-similar-books">
                 <tr>
                     <th>BookId</th>
                     <th>Genre</th>
@@ -57,13 +57,13 @@
 
         <div  class="container" style="margin-bottom:20px">
             <h3>List of All Books</h3>
-            <table id="table-all-books" class="table">
-                <tr>
+            <table class="table js-table-all-books">
+                <tr class="js-table-all-books-rows">
                     <th>BookId</th>
                     <th>Genre</th>
                     <th>Price
-                        <button class="asc" onclick="ascSort()">&#8593</button>
-                        <button class="desc" onclick="descSort()">&#8595</button>
+                        <button class="asc" onclick="sort(true)" >&#8593</button>
+                        <button class="desc" onclick="sort(false)" >&#8595</button>
                     </th>
                     <th>Examine</th>
                 </tr>
