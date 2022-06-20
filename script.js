@@ -1,12 +1,9 @@
-const getBooks= () =>{
-    fetch("books.json")
-    .then(function(response){
+const getBooks = (selector) => {
+    fetch('books.json').then((response) => {
         return response.json();
-    })
-    .then(function(books){
-        console.log(books);
-        let placeholder = document.querySelector("#table-all-books");
-        let out = "";
+    }).then((books) => {
+        let placeholder = document.querySelector(selector);
+        let out = '';
         for(let book of books){
             out += `
                 <tr>
@@ -22,107 +19,78 @@ const getBooks= () =>{
     })
 }
 
-const getSimilarBooks= () =>{
-    fetch("books.json")
-    .then(function(response){
+const search = (searchClass, rowIdx) => {
+    let input = document.querySelector(searchClass);
+    let filter = input.value.toUpperCase();
+    let table = document.querySelector('.js-table-similar-books');
+    let tr = table.getElementsByTagName('tr');
+
+    for(let i=0;i<tr.length;i++){
+        let td = tr[i].getElementsByTagName('td')[rowIdx];
+        if(td){
+            let textVal = td.textContent || td.innerHTML;
+            if(textVal.toUpperCase().indexOf(filter) > -1){
+                tr[i].style.display = ''; 
+            }else{
+                tr[i].style.display = 'none';
+            }
+        }
+    }
+}
+
+const display = (inputName, inputClass) => {
+    fetch('books.json').then((response) => {
         return response.json();
-    })
-    .then(function(books){
-        console.log(books);
-        let placeholder = document.querySelector("#table-similar-books");
-        let out = "";
+    }).then((books) => {
+        let input = document.querySelector(inputClass);
+        let inputObject = {
+            price: '',
+            id: '',
+            genre: '',
+        };
         for(let book of books){
-            out += `
-                <tr>
-                    <td>${book.BookId}</td>
-                    <td>${book.Genre}</td>
-                    <td>${book.Price}</td>
-                    <td>${book.Examine}</td>
-                </tr>
-            `;
-
+            if(book[inputName] === input.value){
+                inputObject.price += `<span>${book.Price}</span>`;
+                inputObject.id += `<span>${book.BookId}</span>`;
+                inputObject.genre += `<span>${book.Genre}</span>`;
+                break;
+            }
         }
-        placeholder.innerHTML += out;
+        document.querySelector('.c-price').innerHTML = inputObject.price;
+        document.querySelector('.c-book').innerHTML = inputObject.id;
+        document.querySelector('.c-genre').innerHTML = inputObject.genre;
     })
 }
 
-const searchGenre= () => {
-    let input = document.getElementById("input-search-genre");
-    let filter = input.value.toUpperCase();
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
-
-    for(let i=0;i<tr.length;i++){
-        let td = tr[i].getElementsByTagName('td')[1];
-        if(td){
-            let textVal = td.textContent || td.innerHTML;
-            if(textVal.toUpperCase().indexOf(filter) > -1){
-                tr[i].style.display = ""; 
+const sort = (ifAsc) => {
+    let table, rows, sorted, sortFlag, idx;
+    table = document.querySelector('.js-table-all-books');
+    sorted = true;
+    while (sorted) {
+        sorted = false;
+        rows = table.rows;
+        for (idx = 1; idx < rows.length - 1; idx++) {
+            sortFlag = false;
+            let firstValue = rows[idx].getElementsByTagName('td')[2];
+            let secondValue = rows[idx + 1].getElementsByTagName('td')[2];
+            if(ifAsc){
+                if (parseInt(firstValue.innerHTML) > parseInt(secondValue.innerHTML)) {
+                    sortFlag = true;
+                    break;
+                 }
             }else{
-                tr[i].style.display = "none";
+                if(parseInt(firstValue.innerHTML) < parseInt(secondValue.innerHTML)){
+                    sortFlag = true;
+                    break;
+                }
             }
         }
-    }
-    
-}
-
-const searchID= () => {
-    let input = document.getElementById("input-search-id");
-    let filter = input.value;
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
-
-    for(let i=0;i<tr.length;i++){
-        let td = tr[i].getElementsByTagName('td')[0];
-        if(td){
-            let textVal = td.textContent || td.innerHTML;
-            if(textVal.indexOf(filter) > -1){
-                tr[i].style.display = "";
-            }else{
-                tr[i].style.display = "none";
-            }
+        if (sortFlag) {
+            rows[idx].parentNode.insertBefore(rows[idx + 1], rows[idx]);
+            sorted = true;
         }
     }
-}
+} 
 
-const searchPrice= () => {
-    let input = document.getElementById("input-search-price");
-    let filter = input.value.toUpperCase();
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
-
-    for(let i=0;i<tr.length;i++){
-        let td = tr[i].getElementsByTagName('td')[2];
-        if(td){
-            let textVal = td.textContent || td.innerHTML;
-            if(textVal.toUpperCase().indexOf(filter) > -1){
-                tr[i].style.display = "";
-            }else{
-                tr[i].style.display = "none";
-            }
-        }
-    }
-   
-}
-
-const display = () =>{
-    let table = document.getElementById("table-similar-books");
-    let tr = table.getElementsByTagName("tr");
-    
-    let idspan = document.querySelector(".c-book");
-    let inid = `<span>${tr[1].getElementsByTagName("td")[0].innerText}</span>`;
-    idspan.innerHTML = inid;
-
-    let pspan = document.querySelector(".c-price");
-    let inp = `<span>${tr[1].getElementsByTagName("td")[2].innerText}</span>`;
-    pspan.innerHTML = inp;
-
-    let gspan = document.querySelector(".c-genre");
-    let ingen = `<span>${tr[1].getElementsByTagName("td")[1].innerText}</span>`;
-    gspan.innerHTML = ingen;
-    
-}
-
-
-getSimilarBooks();
-getBooks();
+getBooks('.js-table-all-books');
+getBooks('.js-table-similar-books');
